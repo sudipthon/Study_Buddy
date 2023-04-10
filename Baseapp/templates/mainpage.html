@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div>
+
+    <a href="{% url 'rooms' %}">
+    
+        <center>
+    
+            <h5>
+            
+                <p>Rooms</p>
+            </h5>
+            </a>
+            <a href="{% url 'messages' %}">
+                <h5>
+            
+                    <p>message</p>
+                </h5>
+            
+            </a>
+        </center>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{%  block content %}
+
+
+<div>
+
+    <form method="POST" action="">
+         {% csrf_token %} <!--this is needed to be added in every form indjango templating engine for security reasons so form submiter cant send/do anything malicious -->
+         {{form.as_p}} <!-- as p treats every element as paragraph -->
+        <input type="Submit", value="Submit"/>
+
+    </form>
+
+</div>
+
+
+{% endblock %}
