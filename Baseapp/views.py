@@ -1,11 +1,11 @@
+# from django.contrib.auth.models import User #for importing defualt user model
 from django.shortcuts import render,redirect
 from django.contrib import messages as me  # if I import it as messages interpreter will confuse my model Message with built in function messages of just below.
 
-from . models import Room,Topic,Message #this model colides with built in messages function
+from . models import Room,Topic,Message,User #this message model colides with built in messages function
 from django.http import HttpResponse
 from . forms import RoomForm,MessageForm,UserForm
 from django.db.models import Q # q lets you have multiple search params
-from django.contrib.auth.models import User #for importing user model
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required #decorator for adding functionality of user restriction
 from django.contrib.auth.forms import UserCreationForm

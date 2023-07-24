@@ -1,10 +1,21 @@
 #everyclass here represents the table and every attributes defines charfield\datatype
 
+# Create your models here.
 
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+
+class User(AbstractUser):
+    name=models.CharField(max_length=100,null=True)
+    email=models.EmailField(max_length=100,unique=True)
+    bio=models.TextField(default='no bio...',max_length=300)
+    # profile_pic=models.ImageField(null=True,blank=True)
+    
+    USERNAME_FIELD='email' #this is the field that will be used to login instead of username
+    REQUIRED_FIELDS=[] #this is the field that will be required to create a user
+ 
+
 class Topic(models.Model):
     name = models.CharField(max_length=200)
 
