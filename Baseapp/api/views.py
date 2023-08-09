@@ -5,6 +5,7 @@ from Baseapp.models import Room
 from .serializers import RoomSerializer
 
 
+
 @api_view(['GET']) #user are  only allowed to get data
 def getRoutes(request): #this view will show us all routes in api
     routes =[

@@ -7,10 +7,11 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    name=models.CharField(max_length=100,null=True)
+    username=models.CharField(max_length=50,unique=True)
+    is_verified=models.BooleanField(default=False)
     email=models.EmailField(max_length=100,unique=True)
     bio=models.TextField(default='no bio...',max_length=300)
-    # profile_pic=models.ImageField(null=True,blank=True)
+    profile_pic=models.ImageField(null=True,default="goku.jpg")
     
     USERNAME_FIELD='email' #this is the field that will be used to login instead of username
     REQUIRED_FIELDS=[] #this is the field that will be required to create a user

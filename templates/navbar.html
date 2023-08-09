@@ -24,9 +24,11 @@
         <div class="header__user">
           <a href="{% url 'profile' request.user.id %}">
             <div class="avatar avatar--medium active">
-              <img src="https://randomuser.me/api/portraits/men/37.jpg" />
+              <img src="{{request.user.profile_pic.url}}" />
             </div>
-            <p>{{request.user}} <span>@{{request.user}}</span></p>
+            <p>{{request.user.username}}
+               <!-- <span>@{{request.user.email}}</span> -->
+              </p>
           </a>
           
           <button class="dropdown-button">
@@ -40,7 +42,7 @@
 
           <!-- Not Logged In --> 
          <a href="{% url 'login_page' %}"> 
-          <img src="{% static 'assets/avatar.svg' %}" />
+          <img src="{{request.user.profile_pic.url}}" />
           <p>Login</p>
         </a> 
 

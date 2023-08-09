@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<form action="{% url 'email_verification' 0 %}" method="POST">
+    {% csrf_token %}
+
+    <h1>Activate your account</h1>
+    <label for="">Enter the code</label>
+    <input type="text" name="code" id="code">
+    <input type="submit" value="Submit" id="">
+
+</form>
+
+user is {{user}}
+{% endblock %}
