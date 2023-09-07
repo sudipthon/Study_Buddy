@@ -2,12 +2,12 @@ from django.urls import path
 from . import views
 
 urlpatterns=[
+    path('',views.rooms,name='rooms'),
     path('log-in/',views.Log,name='login_page'),
     path('log-out/',views.LogOutUser,name='logout_page'),
     path('register/',views.RegisterUser,name='register_page'),
     path('verify/<str:pk>/',views.verify_email,name='email_verification'),
 
-    path('',views.rooms,name='rooms'),
     path('room/<str:pk>/',views.room,name='room'),
     path('profile/<str:pk>/',views.UserProfile,name='profile'),
     path('create/',views.createRoom,name='create-room'),
